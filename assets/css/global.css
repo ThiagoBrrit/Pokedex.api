@@ -53,7 +53,7 @@ body {
 
 @media screen and (max-width: 726px) {
     .modal-content {
-        width: 300px; /* Altere para 300px para celulares */
+        width: 200px; /* Altere para 300px para celulares */
     }
     .image img {
         width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner */
