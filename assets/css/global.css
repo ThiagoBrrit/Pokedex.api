@@ -53,7 +53,7 @@ body {
 
 @media screen and (max-width: 726px) {
     .modal-content {
-        width: 250px; /* Altere para 300px para celulares */
+        width: 270px; /* Altere para 300px para celulares */
     }
     .image img {
         width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner */
@@ -107,7 +107,7 @@ body {
     margin: px 20px;
     text-align: center;
     background-color: #fff;
-    height: 40vh;
+    height: 45vh;
 }
 
 .center,
