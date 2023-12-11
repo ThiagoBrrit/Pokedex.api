@@ -1,0 +1,125 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: antiquewhite;
+}
+
+.max-width {
+    max-width: 500px; /* Defina o valor desejado para o máximo de largura */
+    margin: 0 auto; /* Isso centralizará o conteúdo na tela */
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.content_pokemon {
+    position: relative;
+    background-color: #77c850;
+    color: #fff;
+    padding: 20px;
+    border-radius: 1rem;
+}
+
+.position {
+    position: absolute;
+    top: 80px;
+    left: 324px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+
+.content_pokemon .detail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content_pokemon .detail .types {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.content_pokemon .detail .types .type {
+    display: inline-block;
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+    background-color: #77c850;
+}
+
+.content_pokemon .image {
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    text-align: center;
+}
+
+.content_details{
+    border-radius: 1rem;
+    margin: px 20px;
+    text-align: center;
+    background-color: #fff;
+    height: 60vh;
+}
+
+.center{
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.content_details .left{
+    text-align: left;
+    max-width: 170px;
+}
+
+.beetween {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.beetween p {
+    margin-right: 10px; /* Adicione a distância desejada aqui */
+    margin-bottom: 6px; /* Remova a margem inferior padrão, se necessário */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.beetween span {
+    margin-bottom: 0; /* Remova a margem inferior padrão, se necessário */
+    margin-bottom: 6px;
+}
+
+.content_details_breeding {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.center_breeding {
+    display: inline-block;
+    text-align: left; /* ou text-align: center; se preferir */
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+

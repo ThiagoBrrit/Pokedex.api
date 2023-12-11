@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./assets/css/pokemonDetails.css">
+</head>
+<body>
+    <div class="max-width" id="pokemon-details">
+
+        <div class="content_pokemon">
+            <h1>Bulbasaur</h1>
+            <span class="position" id="test">2</span>
+            <div class="detail">
+                <ol class="types">
+                    <li class="type">
+                        <span>grass</span>
+                    </li>
+                    <li class="type"> 
+                        <span>poison</span>
+                    </li>
+                </ol>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
+            </div>
+        </div>
+        <div class="content_details">
+            <span class="center">Details</span>
+            <div class="left">
+                <div class="beetween">
+                    <p>Species:</p> <span>seed</span>
+                </div>
+                <div class="beetween">
+                    <p>Height:</p> <span>(0,70cm)</span>
+                </div>
+                <div class="beetween">
+                    <p>Weight:</p> <span>(6.9Kg)</span>
+                </div>
+                <div class="beetween">
+                    
+                    <p>Abilities:</p> <span>Overgrow, Chlorophyl</span>
+                </div>
+                <div class="content_details_breeding">
+                    <span class="center_breeding">Breeding</span>
+                    <div class="beetween">
+                        <p>Gender:</p> <span>87.5%</span> <span>12.5%</span>
+                    </div>
+                    <div class="beetween">
+                        <p>Egg groups:</p> <span>monster</span>
+                    </div>
+                    <div class="beetween">
+                        <p>Egg cycle:</p> <span>grass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Replace 'POKEMON_ID' with the actual ID you want to fetch
+        const pokemonId = document.getElementById('test');
+        const pokemonIdInnerText = pokemonId.innerText;
+    
+        // Fetch Pokémon details from the API
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonIdInnerText}`)
+            .then(response => response.json())
+            .then(data => {
+                const pokemonDetails = document.getElementById('pokemon-details');
+    
+                // Dynamically create HTML based on the fetched data
+                pokemonDetails.innerHTML = `
+
+                    <div class="content_pokemon">
+                        <h1>${data.name}</h1>
+                        <span class="position" id="test">${data.id}</span>
+                        <div class="detail">
+                            <ol class="types">
+                                ${data.types.map(type => `<li class="type"><span>${type.type.name}</span></li>`).join('')}
+                                
+                            </ol>
+                        </div>
+                        <div class="image">
+                            <img src="${data.sprites.other['dream_world'].front_default}" alt="${data.name}">
+                        </div>
+                    </div>
+                    <div class="content_details">
+                        <span class="center">Details</span>
+                        <div class="left">
+                            <div class="beetween">
+                                <p>Species:</p> <span>seed</span>
+                            </div>
+                            <div class="beetween">
+                                <p>Height:</p> <span>(0,70cm)</span>
+                            </div>
+                            <div class="beetween">
+                                <p>Weight:</p> <span>(6.9Kg)</span>
+                            </div>
+                            <div class="beetween">
+                                
+                                <p>Abilities:</p> <span>Overgrow, Chlorophyl</span>
+                            </div>
+                            <div class="content_details_breeding">
+                                <span class="center_breeding">Breeding</span>
+                                <div class="beetween">
+                                    <p>Gender:</p> <span>87.5%</span> <span>12.5%</span>
+                                </div>
+                                <div class="beetween">
+                                    <p>Egg groups:</p> <span>monster</span>
+                                </div>
+                                <div class="beetween">
+                                    <p>Egg cycle:</p> <span>grass</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            })
+    </script>
+</body>
+</html>

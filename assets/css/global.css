@@ -1,0 +1,184 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f6f8fc;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000; 
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; /* Defina a largura desejada */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001; 
+    color: #fff;
+}
+
+@media screen and (max-width: 726px) {
+    .modal-content {
+        width: 300px; /* Altere para 300px para celulares */
+    }
+    .image img {
+        width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner */
+        max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+        height: auto; /* Mantém a proporção da altura em relação à largura */
+    }
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1002; 
+}
+
+.position {
+    position: absolute;
+    top: 62px;
+    right: 10px;
+}
+
+.image {
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.types {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.type {
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+}
+
+.content_details{
+    color: #000;
+    border-radius: 1rem;
+    margin: px 20px;
+    text-align: center;
+    background-color: #fff;
+    height: 40vh;
+}
+
+.center,
+.content_details .left,
+.beetween,
+.beetween p,
+.beetween span,
+.content_details_breeding,
+.center_breeding {
+    margin: 0 auto; /* Define margens automáticas para centralizar */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+
+.beetween {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo dentro do flex container */
+    margin-top: 4px;
+}
+
+.center_breeding {
+    display: block; /* Muda para display: block para que a margem automática funcione corretamente */
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.center {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px; /* Adicione a margem desejada entre "Details" e os elementos seguintes */
+}
+
+.left {
+    text-align: left;
+    max-width: 170px;
+}
+
+.beetween {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    margin-bottom: 4px; /* Adicione a margem desejada entre as divs .beetween */
+}
+
+.beetween p {
+    margin-right: 10px;
+    margin-bottom: 0; /* Remova a margem inferior padrão, se necessário */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.beetween span {
+    margin-bottom: 0;
+}
+
+.content_details_breeding {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 1rem;
+    margin-top: 8px; /* Adicione a margem desejada acima da seção de reprodução */
+    margin-bottom: 8px; /* Adicione a margem desejada abaixo da seção de reprodução */
+}
+
+.center_breeding {
+    display: inline-block;
+    text-align: left; /* ou text-align: center; se preferir */
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
